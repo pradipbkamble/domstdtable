@@ -41,7 +41,6 @@ let onEdit = (edt) =>{
 
 }
 
-
 const templating = (temp) =>{
     let result = ``;
     temp.forEach((std,i) => {
