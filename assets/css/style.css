@@ -1,0 +1,32 @@
+*{
+    padding: opx;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.head{
+    height: 80px;
+    color: black;
+    padding: 20px;
+    font-size: bold;
+}
+
+.box{
+    height: 100%;
+    width: 80px;
+    border:1px solid black;
+    text-align: center;
+    background-color: rgb(136, 178, 214);
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.btn{
+    border-radius: 30px;
+    color: black;
+
+}
+.table{
+    color: black;
+    font-size: 20px;
+    text-transform: capitalize;
+}
