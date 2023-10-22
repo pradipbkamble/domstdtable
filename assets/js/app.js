@@ -6,8 +6,8 @@ let lastn=document.getElementById("lastn");
 let contact= document.getElementById("contact");
 let gmail=document.getElementById("gmail");
 let tableData=document.getElementById("tableData");
-let updatebtn= document.getElementById("updatebtn");
-let submitbtn= document.getElementById("submitbtn");
+let updateBtn= document.getElementById("updateBtn");
+let submitBtn= document.getElementById("submitBtn");
 
 
 //let arry = [
@@ -20,9 +20,9 @@ let submitbtn= document.getElementById("submitbtn");
 
     //}
 //];
-let arry =JSON.parse(localStorage.getItem("tableData")) || [];
+let arry =JSON.parse(localStorage.getItem("forminfo")) || [];
 
-let onEdit = (edt) =>{
+let onEdit = (edt) => {
     cl(edt)
     let getid = edt.closest("tr").id;
     cl(getid)
@@ -30,20 +30,20 @@ let onEdit = (edt) =>{
       //  return stds.stdid ===getid
     //})
     localStorage.setItem("editid",getid)
-    let getedtobj =arry.find(stds=> stds.stdid === getid);
+    let getedtobj = arry.find(std=> std.stdid === getid);
     cl(getedtobj)
-     updatebtn.classList.add("d-none");
-     submitbtn.classList.remove("d-none");
-     fname.value = getedtobj.fname;
-     lastn.value = getedtobj.lastn;
-     contact.value = getedtobj.contact;
-     gmail.value = getedtobj.gmail;
+     updateBtn.classList.remove("d-none");
+     submitBtn.classList.add("d-none");
+            fname.value = getedtobj.fname;
+            lastn.value = getedtobj.lastn;
+            contact.value =getedtobj.contact;
+            gmail.value = getedtobj.gmail;
 
-}
+                     }
 
 const templating = (temp) =>{
     let result = ``;
-    temp.forEach((std,i) => {
+    temp.forEach((std, i) => {
         result +=
                   `<tr id="${std.stdid}">
                      <td>${i +1}</td>
@@ -85,22 +85,24 @@ let onupdate =()=>{
     let getid=localStorage.getItem("editid");
     cl(getid)
     arry.forEach(std => {
-        if(std.stdid === getid){
-            fname.value = getid.fname;
-            lastn.value = getid.lastn;
-            contact.value = getid.contact;
-            gmail.value = getid.gmail;
+        if(std.stdid === getid) {
+            std.fname = fname.value;
+            std.lastn = lastn.value;
+            std.contact = contact.value;
+             std.gmail = gmail.value;
         }
     })
     localStorage.setItem("tableData",JSON.stringify(arry));
     templating(arry);
+    let getTr =document.getElementById(getid).children;
+    cl(getTr)
 }
 
 
 
 
 forminfo.addEventListener("submit",onsubmit);
-updatebtn.addEventListener("click",onupdate);
+updateBtn.addEventListener("click",onupdate);
 
 function uuidv4() { 
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'

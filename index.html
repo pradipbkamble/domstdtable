@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial scale=1.0">
     <title>STUDENT CRUD </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
    <link rel="stylesheet" href="./assets/css/style.css">
    </head>
    <body class="bg-success">
@@ -16,34 +16,34 @@
         <div class="col-md-4">
           <div class="card">
             <div class="card-body">
-            <form id="forminfo">
+            <form Id="forminfo">
 
               <div class="form-group">
               <label for="fname"class="box">name</label>
-              <input type="text" class="form-control" id="fname"/>
+              <input type="text" class="form-control" Id="fname"/>
               </div>
               <div class="form-group">
               <label for="lastn" class="box">last name</label>
-              <input type="text" class="form-control" id="lastn"/>
+              <input type="text" class="form-control" Id="lastn"/>
               </div>
               <div class="form-group">
               <label for="contact" class="box">contact</label>
-              <input type="text" class="form-control" id="contact"/>
+              <input type="number" class="form-control" Id="contact"/>
               </div>
               <div class="form-group">
               <label for="gmail" class="box">gmail</label>
-              <input type="text" class="form-control" id="gmail"/>
+              <input type="text" class="form-control" Id="gmail"/>
               </div>
               <div class="text-center">
-              <button class="btn btn-success" id="submitbtn" type="submit">submit</button>
-              <button class="btn btn-info" id="updatebtn" type="button">update</button>
+              <button class="btn btn-success" Id="submitBtn" type="submit">submit</button>
+              <button class="btn btn-info d-none" Id="updateBtn" type="Button">update</button>
               </div>
             </form>
             </div>
           </div>
         </div>
       <div class="col-md-8">
-        <table class="table table-borderd bg-info">
+        <table class="table table-bordered bg-info">
           <thead>
             <tr>
               <th>sr no</th>
@@ -55,7 +55,7 @@
               <th>submit</th>
             </tr>
           </thead>
-          <tbody id="tableData">
+          <tbody Id="tableData">
 
           </tbody>
         </table>
