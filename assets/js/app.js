@@ -41,6 +41,18 @@ let onEdit = (edt) => {
 
                      }
 
+
+let onDelet =(dlt) =>{
+    cl(dlt.closest("tr").id)
+    let getIndex = arry.findIndex(std=>{
+        return std.stdid === getid
+    })
+    cl(getIndex)
+    arry.splice(getIndex, 1)
+    localStorage.setItem("forminfo",JSON.stringify(arry))
+    document.getElementById(getid).remove()
+}
+
 const templating = (temp) =>{
     let result = ``;
     temp.forEach((std, i) => {
@@ -55,14 +67,14 @@ const templating = (temp) =>{
                      <button class="btn btn-primary"onclick="onEdit(this)">edit</button>
                      </td>
                      <td>
-                     <button class="btn btn-danger" onclick="ondelet(this)">delet</button>
+                     <button class="btn btn-danger" onclick="onDelet(this)">delet</button>
                      </td>
                   </tr>
                   ` 
     });
     tableData.innerHTML = result;
 }
-templating(arry)
+templating(arry);
 
 let onsubmit= (eve) => {
     eve.preventDefault()
